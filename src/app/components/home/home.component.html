@@ -1,0 +1,53 @@
+<h1>Angular PhoneBook</h1>
+<input type="text" type="text" placeholder="Search" ><br><br>
+<table align="center" border="4" style="margin-left: 2%;" cellspacing="10" cellpadding="10">
+    <thead >
+        <tr>
+            <th style="text-align: center;">
+                ID  
+            </th>  
+            <th style="text-align: center;">
+                Last Name
+            </th>
+            <th style="text-align: center;">
+                First Name
+            </th>
+            <th style="text-align: center;">
+                Contact Number
+            </th>
+            <th>Action</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let det of phb">
+            <td>{{det.id}}</td>
+            <td>{{det.Lname}}</td>
+            <td>{{det.Fname}}</td>
+            <td>{{det.ConNumber}}</td>
+            <td><button class="button button3" (click)=deleteContact(det)>X</button>&nbsp;
+                <button class="button button2" (click)=editDetails(det.id)>Update</button></td>
+
+        </tr>
+    </tbody>
+</table>
+<br>
+
+<div>
+<button class="button button5" (click)="flip()">Add Contact</button>
+</div>
+
+<div [hidden]="myVar">
+    <h2>Add Contact</h2>
+<form id="addConForm">
+    <div>
+        <input type="text" placeholder="First Name"  #Fname />
+    </div><br>
+    <div>
+        <input type="text" placeholder="Last Name"  #Lname />
+    </div><br>
+    <div>
+        <input type="text" placeholder="Contact Number"  #ConNumber />
+    </div><br>
+    <button class="button" (click)="addContact(Fname.value,Lname.value,ConNumber.value)" type="button">Add Contact</button>
+</form>
+</div>

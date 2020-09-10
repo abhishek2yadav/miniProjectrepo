@@ -1,0 +1,14 @@
+<h2>Update Contact</h2>
+<form >
+    <div>
+        <input type="text" placeholder="First Name" value={{Fn}} #Fname />
+    </div><br>
+    <div>
+        <input type="text" placeholder="Last Name" value={{Ln}} #Lname />
+    </div><br>
+    <div>
+        <input type="text" placeholder="Contact Number" value={{Con}} #ConNumber />
+    </div><br>
+    <button class="button"(click)="editDetails(Fname.value,Lname.value,ConNumber.value)" type="button">Edit Contact</button>
+</form><br>
+<button class="button button2" (click)="mainPage()" type="button">View Contacts</button> 
